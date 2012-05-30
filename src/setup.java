@@ -1,4 +1,5 @@
 import java.net.UnknownHostException;
+import java.util.Set;
 
 import com.mongodb.Mongo;
 import com.mongodb.DB;
@@ -14,7 +15,9 @@ public class setup {
 		Mongo m;
 		try {
 			m = new Mongo();
-			DB db = m.getDB("Teams");
+			DB db = m.getDB("ffdb");
+			DBCollection teams = db.getCollection("teams");
+			
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
